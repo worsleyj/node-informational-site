@@ -1,8 +1,12 @@
-var http = require("http");
+const http = require("http");
+const port = 8080;
 
-http
-  .createServer(function (req, res) {
-    res.writeHead(200, { "Content-Type": "text/plain" });
-    res.end("Hello World!");
-  })
-  .listen(8080);
+const server = http.createServer(function (req, res) {});
+
+server.listen(port, function (error) {
+  if (error) {
+    console.log("Something went wrong! Error", error);
+  } else {
+    console.log("Server is listening on port " + port);
+  }
+});
