@@ -4,7 +4,9 @@ const url = require("url");
 const port = 8080;
 
 const server = http.createServer(function (req, res) {
-  const q = url.parse(req.url, true);
+  console.log(req.url);
+
+  const q = url.parse(req.url);
   let filename = "";
   if (q.pathname === "/") {
     filename = "./index.html";
