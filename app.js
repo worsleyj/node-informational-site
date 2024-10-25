@@ -4,6 +4,11 @@ const fs = require("fs");
 const url = require("url");
 const port = 8080;
 
+if (process.env.NODE_ENV === "prod") {
+  console.log("production!");
+  console.log(process.env.VIDEO_URL);
+}
+
 const server = http.createServer(function (req, res) {
   const q = url.parse(req.url);
   let filename = "";
